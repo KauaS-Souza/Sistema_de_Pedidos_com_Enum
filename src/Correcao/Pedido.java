@@ -47,7 +47,16 @@ public class Pedido {
         } else if (StatusPedido.ENVIADO == pedido.getStatus()) {
             setStatus(StatusPedido.ENTREGUE);
         }else {
-            IO.println("O Status não po de ser alterado");
+            IO.println("O Status não pode ser alterado");
+        }
+    }
+
+    public void canceladoPedido(){
+        if (status != StatusPedido.ENTREGUE){
+            IO.println("Pedido cancelado com Sucesso!!");
+            setStatus(StatusPedido.CANCELADO);
+        } else{
+            IO.println("O pedido foi entregue não é possivel cancelar");
         }
     }
 }
